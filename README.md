@@ -13,12 +13,13 @@ Eloqua Ruby Request
 ### POST
         require('eloqua-ruby-request')
         request = EloquaRequest.new('site', 'user', 'password')
-	data = ...
+        data = ...
         response = request.post('/assets/email', data)
 
 ### PUT
         require('eloqua-ruby-request')
         request = EloquaRequest.new('site', 'user', 'password')
+        data = ...
         response = request.put('/assets/email/123', data)
 
 ### DELETE
