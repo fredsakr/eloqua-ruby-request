@@ -3,12 +3,12 @@ require 'net/https'
 class EloquaRequest
 	attr_reader :site, :user
 
-	def initialize(site=nil, user=nil, password=nil)
+	def initialize(site=nil, user=nil, password=nil, baseUrl=nil)
 		@site = site
 		@user = user
 		@password = password
 
-		@https = Net::HTTP.new('secure.eloqua.com', 443)
+		@https = Net::HTTP.new(baseUrl, 443)
 		@https.use_ssl = true
 		@https.verify_mode = OpenSSL::SSL::VERIFY_PEER
 	end
