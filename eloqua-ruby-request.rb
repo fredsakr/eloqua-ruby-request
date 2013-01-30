@@ -39,8 +39,8 @@ class EloquaRequest
 	end
 
 	def request(method, path, params={}, body={})
-		
 		request = METHODS[method].new(REST_API_PATH + '/' + path)
+		request.initialize_http_header(params) if params
 		request.basic_auth @site + '\\' + @user, @password
 
 		case method
