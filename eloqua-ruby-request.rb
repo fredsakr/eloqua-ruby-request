@@ -11,6 +11,7 @@ class EloquaRequest
 		@https = Net::HTTP.new(baseUrl, 443)
 		@https.use_ssl = true
 		@https.verify_mode = OpenSSL::SSL::VERIFY_PEER
+		@https.ca_file = OpenSSL::X509::DEFAULT_CERT_FILE
 	end
 
 	METHODS = {
